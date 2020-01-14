@@ -6963,7 +6963,7 @@ void ImGui::DebugNodeTypingSelectState(ImGuiTypingSelectState* data)
 //-------------------------------------------------------------------------
 // - BeginMultiSelect()
 // - EndMultiSelect()
-// - SetNextItemMultiSelectData()
+// - SetNextItemSelectionUserData()
 // - MultiSelectItemHeader() [Internal]
 // - MultiSelectItemFooter() [Internal]
 //-------------------------------------------------------------------------
@@ -7047,7 +7047,7 @@ void ImGui::MultiSelectItemHeader(ImGuiID id, bool* p_selected)
     ImGuiContext& g = *GImGui;
     ImGuiMultiSelectState* ms = &g.MultiSelectState;
 
-    IM_ASSERT((g.NextItemData.SelectionUserData != ImGuiSelectionUserData_Invalid) && "Forgot to call SetNextItemMultiSelectData() prior to item, required in BeginMultiSelect()/EndMultiSelect() scope");
+    IM_ASSERT((g.NextItemData.SelectionUserData != ImGuiSelectionUserData_Invalid) && "Forgot to call SetNextItemSelectionUserData() prior to item, required in BeginMultiSelect()/EndMultiSelect() scope");
     void* item_data = (void*)g.NextItemData.SelectionUserData;
 
     // Apply Clear/SelectAll requests requested by BeginMultiSelect().
